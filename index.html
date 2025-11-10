@@ -12,12 +12,12 @@
 <body>
     <header>
         <div class="header-left">
-            <h1 class="logo">PAWS</h1>
+            <a href="#" class="logo-link"><h1 class="logo">PAWS</h1></a> 
         </div>
         <nav class="header-right">
-            <a href="#koleksi">NEW DROP</a>
-            <a href="#sale">SALE</a>
-            <a href="#artikel">ARTIKEL</a>
+            <a href="#" id="menu-new-drop">NEW DROP</a> 
+            <a href="#" id="menu-sale">SALE</a>
+            <a href="#" id="menu-artikel">ARTIKEL</a>
             <a href="#" id="keranjang-btn">CART (0)</a>
         </nav>
     </header>
@@ -32,9 +32,10 @@
         </section>
 
         <section id="koleksi">
-            <h2 class="section-title">EXCLUSIVE DROP</h2>
+            <h2 class="section-title" id="koleksi-title">EXCLUSIVE DROP</h2> 
             <div id="daftar-produk" class="produk-grid">
                 </div>
+            <button id="checkout-btn" class="cta-button" style="display: none; margin-top: 40px;">CHECKOUT & ORDER</button>
         </section>
         
         <section id="banner-promo">
@@ -53,6 +54,23 @@
         </div>
         <p class="copyright">&copy; 2024 URBAN GEAR. EST. MMXXIV</p>
     </footer>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <div id="initial-popup" class="modal">
+        <div class="modal-content popup-banner">
+            <span class="close-button-popup">&times;</span>
+            <h2>WELCOME TO THE STREET</h2>
+            <p>Lihat koleksi terbaru kami yang terinspirasi dari energi jalanan. **KUALITAS BERANI**.</p>
+            <button class="cta-button" id="enter-site-btn">ENTER</button>
+        </div>
+    </div>
 
     <script src="script.js"></script> 
 </body>
