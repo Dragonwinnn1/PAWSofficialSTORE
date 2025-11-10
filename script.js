@@ -1,7 +1,7 @@
 // Struktur data produk dengan kategori dan detail lebih lengkap
 const daftarProdukLengkap = [
     // NEW DROP & SALE
-    { id: 1, nama: "Urban Mischief Tee", harga: 249000, gambar: "distro-kaos-01.jpg", kategori: "new-drop,sale", spesifikasi: "Cotton Combed 30s, Sablon Plastisol, Regular Fit.", deskripsi: "Kaos perdana dari koleksi 'Concrete Jungle'. Desain minimalis namun penuh makna." },
+    { id: 1, nama: "Urban Mischief Tee", harga: 249000, gambar: "https://github.com/Dragonwinnn1/PAWSofficialSTORE/blob/main/WSA.jpg?raw=true", kategori: "new-drop,sale", spesifikasi: "Cotton Combed 30s, Sablon Plastisol, Regular Fit.", deskripsi: "Kaos perdana dari koleksi 'Concrete Jungle'. Desain minimalis namun penuh makna." },
     // SALE
     { id: 2, nama: "Black & White Anarchy Hoodie", harga: 489000, gambar: "distro-kaos-02.jpg", kategori: "sale", spesifikasi: "Fleece Tebal 280gsm, Sablon Discharge, Oversize Fit.", deskripsi: "Hoodie tebal dengan artwork kontras, cocok untuk cuaca dingin perkotaan. SALE HINGGA AKHIR BULAN!" },
     // NEW DROP
@@ -329,3 +329,4 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSection.style.backgroundImage = `url('${bgImages[0]}')`;
     }
 });
+
