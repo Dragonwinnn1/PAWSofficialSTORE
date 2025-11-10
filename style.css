@@ -1,0 +1,273 @@
+/* Palet Warna: Gelap (Distro) */
+:root {
+    --color-bg-dark: #121212; /* Background Hitam/Abu Tua */
+    --color-text-light: #f0f0f0; /* Teks Putih Off-White */
+    --color-accent: #FF0000; /* Warna Aksen Merah Menyala */
+    --font-heading: 'Bebas Neue', cursive; 
+    --font-body: 'Roboto Condensed', sans-serif;
+}
+
+/* Styling Dasar */
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-dark); 
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+/* Header & Navigasi */
+header {
+    background-color: var(--color-bg-dark);
+    border-bottom: 2px solid var(--color-accent); /* Garis tebal aksen */
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0;
+    letter-spacing: 4px;
+    color: var(--color-accent); /* Logo dengan warna aksen */
+}
+
+nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-accent); /* Efek hover ke warna aksen */
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: flex-start; /* Konten di sisi kiri/kanan */
+    align-items: center;
+    text-align: left;
+    padding-left: 80px;
+    /* Efek overlay gelap jika gambar terlalu terang */
+}
+
+.hero-content {
+    z-index: 10;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 30px;
+    border-left: 4px solid var(--color-accent); /* Border aksen */
+}
+
+.hero-pre-title {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    color: var(--color-accent); /* Aksen warna */
+}
+
+#hero h2 {
+    font-family: var(--font-heading);
+    font-size: 4em; 
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 8px; 
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+.cta-button {
+    display: inline-block;
+    color: var(--color-text-light);
+    background-color: var(--color-accent); /* Tombol penuh warna aksen */
+    border: none;
+    padding: 12px 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.cta-button:hover {
+    background-color: #DD0000; /* Sedikit lebih gelap saat hover */
+}
+
+/* Koleksi Produk */
+#koleksi {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    color: var(--color-text-light);
+}
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom untuk tampilan padat */
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.produk-item {
+    text-align: left;
+    position: relative;
+    background-color: #222; /* Kontainer produk sedikit lebih terang dari background body */
+    padding: 10px;
+}
+
+.produk-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #444;
+}
+
+.produk-item h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 0;
+    letter-spacing: 1px;
+    color: var(--color-text-light);
+}
+
+.produk-item p {
+    font-size: 13px;
+    margin: 0;
+    color: #999;
+    font-weight: 400;
+}
+
+/* Tombol Tambah ke Keranjang (Selalu Terlihat) */
+.tambah-keranjang {
+    width: 100%;
+    background-color: var(--color-accent); 
+    color: var(--color-text-light);
+    padding: 8px 0;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.tambah-keranjang:hover {
+    background-color: #DD0000;
+}
+
+/* Banner Promo Dinamis */
+#banner-promo {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    font-size: 2em;
+    letter-spacing: 10px;
+    border-top: 5px solid var(--color-text-light);
+    border-bottom: 5px solid var(--color-text-light);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #888;
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    font-size: 12px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.copyright {
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Responsif Dasar */
+@media (max-width: 992px) {
+    .produk-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #hero {
+        padding-left: 40px;
+    }
+    #hero h2 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .produk-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    #hero {
+        padding-left: 20px;
+        height: 60vh;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 20px;
+    }
+    .hero-content {
+        max-width: 100%;
+        padding: 15px;
+        border-left: none;
+        border-top: 4px solid var(--color-accent);
+    }
+    #hero h2 {
+        font-size: 2.5em;
+        letter-spacing: 5px;
+    }
+    #banner-promo {
+        font-size: 1.5em;
+        letter-spacing: 5px;
+    }
+}
