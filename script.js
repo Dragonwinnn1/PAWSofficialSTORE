@@ -37,15 +37,8 @@ const kontainerProduk = document.getElementById('daftar-produk');
 const koleksiTitle = document.getElementById('koleksi-title');
 const checkoutBtn = document.getElementById('checkout-btn');
 
-// --- PENGATURAN BACKGROUND HERO SECTION (Fokus Anda) ---
+// --- PENGATURAN BACKGROUND HERO SECTION ---
 const heroSection = document.getElementById('hero');
-
-/**
- * !!! PERHATIAN !!!
- * Ganti nama file gambar di array ini untuk mengubah background hero section.
- * Pastikan file gambar ada di folder yang sama dengan script.js.
- * Jika Anda hanya ingin 1 gambar, biarkan hanya 1 nama di array.
- */
 const bgImages = [
     'hero-distro.jpg', 
     'hero-distro-2.jpg', 
@@ -55,17 +48,12 @@ const bgImages = [
 let currentBgIndex = 0;
 
 function gantiBackground() {
-    // Fungsi ini akan mengganti background hero ke gambar berikutnya dari array bgImages
     currentBgIndex = (currentBgIndex + 1) % bgImages.length;
     heroSection.style.backgroundImage = `url('${bgImages[currentBgIndex]}')`;
     console.log(`Background diubah menjadi: ${bgImages[currentBgIndex]}`);
 }
 
-// Opsional: Untuk mengaktifkan pergantian background otomatis setiap 10 detik,
-// hapus tanda komentar (//) pada baris di bawah ini:
-// setInterval(gantiBackground, 10000); 
-
-// Inisialisasi background awal (mengambil dari array jika tidak ada di HTML)
+// Inisialisasi background awal
 if (heroSection.style.backgroundImage === "") {
     heroSection.style.backgroundImage = `url('${bgImages[0]}')`;
 }
@@ -189,8 +177,8 @@ function handleCheckout() {
             window.open(`https://wa.me/6281234567890?text=${encodedTeks}`, '_blank');
             break;
         case '2':
-            // GANTI DENGAN USERNAME TELEGRAM ANDA (Contoh: @paws_official)
-            window.open(`https://t.me/share/url?url=PAWS_ORDER&text=${encodedTeks}`, '_blank');
+            // TELAH DIGANTI: MENGGUNAKAN USERNAME TELEGRAM @wedemantap
+            window.open(`https://t.me/wedemantap?text=${encodedTeks}`, '_blank');
             break;
         case '3':
             navigator.clipboard.writeText(teksPesanan)
@@ -239,15 +227,32 @@ const initialPopup = document.getElementById('initial-popup');
 const closePopupBtn = document.querySelector('#initial-popup .close-button-popup');
 const enterSiteBtn = document.getElementById('enter-site-btn');
 
+/**
+ * LOGIC PERUBAHAN UTAMA:
+ * 1. Jika pop-up BELUM PERNAH ditampilkan (cek sessionStorage), tampilkan pop-up dan berikan efek blur pada background (main).
+ * 2. Jika pop-up SUDAH PERNAH ditampilkan, langsung panggil tampilkanProduk('new-drop').
+ */
 function tampilkanPopupAwal() {
+    // Check if the popup has been shown in the current session
     if (!sessionStorage.getItem('popupShown')) {
+        // If not shown, display the popup and blur the background
+        document.querySelector('main').style.filter = 'blur(5px)';
         initialPopup.style.display = 'block';
+    } else {
+        // If already shown, just load the products immediately (New Drop)
+        tampilkanProduk('new-drop'); 
     }
 }
 
 function sembunyikanPopupAwal() {
     initialPopup.style.display = 'none';
     sessionStorage.setItem('popupShown', 'true'); 
+    
+    // Hapus efek blur
+    document.querySelector('main').style.filter = 'none';
+    
+    // Panggil fungsi untuk menampilkan produk NEW DROP setelah pop-up ditutup
+    tampilkanProduk('new-drop'); 
 }
 
 closePopupBtn.onclick = sembunyikanPopupAwal;
@@ -315,7 +320,12 @@ checkoutBtn.addEventListener('click', handleCheckout);
 
 // Jalankan fungsi utama saat halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
-    tampilkanProduk('new-drop'); // Tampilkan NEW DROP sebagai default
+    // BARIS INI TIDAK LAGI MEMANGGIL tampilkanProduk() SECARA LANGSUNG
     updateKeranjangUI();
-    tampilkanPopupAwal(); 
+    tampilkanPopupAwal(); // Sekarang fungsi ini yang akan memuat konten default setelah pop-up atau jika pop-up sudah pernah dilihat
+    
+    // Inisialisasi background awal
+    if (heroSection.style.backgroundImage === "") {
+        heroSection.style.backgroundImage = `url('${bgImages[0]}')`;
+    }
 });
