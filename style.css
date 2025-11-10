@@ -31,6 +31,10 @@ header {
     z-index: 1000;
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
 .logo {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -66,7 +70,7 @@ nav a:hover {
     align-items: center;
     text-align: left;
     padding-left: 80px;
-    /* Efek overlay gelap jika gambar terlalu terang */
+    transition: background-image 1s ease-in-out; /* Transisi untuk background dinamis */
 }
 
 .hero-content {
@@ -109,6 +113,7 @@ nav a:hover {
     letter-spacing: 2px;
     transition: background-color 0.3s ease;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -143,6 +148,13 @@ nav a:hover {
     position: relative;
     background-color: #222; /* Kontainer produk sedikit lebih terang dari background body */
     padding: 10px;
+    cursor: pointer; /* Menandakan item bisa diklik untuk detail */
+    transition: transform 0.2s;
+}
+
+.produk-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .produk-item img {
@@ -228,6 +240,88 @@ footer {
     color: #444;
 }
 
+/* --- Tambahan Styling Modal & Pop-up --- */
+
+/* Styling untuk Modal (Pop-up) */
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed; 
+    z-index: 2000; /* Di atas semua elemen */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.95); /* Overlay sangat gelap */
+}
+
+.modal-content {
+    background-color: var(--color-bg-dark);
+    margin: 5% auto; /* Jarak dari atas */
+    padding: 30px;
+    border: 1px solid var(--color-accent);
+    width: 80%; 
+    max-width: 800px;
+    position: relative;
+    color: var(--color-text-light);
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.4);
+}
+
+.close-button, .close-button-popup {
+    color: var(--color-accent);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover, .close-button-popup:hover,
+.close-button:focus, .close-button-popup:focus {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+/* Styling Modal Detail Produk */
+#modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-accent);
+}
+
+#modal-body h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    margin-top: 0;
+}
+
+#modal-body p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* Styling Pop-up Banner Awal */
+.popup-banner {
+    text-align: center;
+    max-width: 500px;
+    padding: 50px 30px;
+    border: 5px double var(--color-accent);
+}
+
+.popup-banner h2 {
+    font-family: var(--font-heading);
+    font-size: 3em;
+    letter-spacing: 8px;
+    color: var(--color-accent);
+}
+
+.popup-banner p {
+    margin-bottom: 30px;
+}
+
 /* Responsif Dasar */
 @media (max-width: 992px) {
     .produk-grid {
@@ -269,5 +363,9 @@ footer {
     #banner-promo {
         font-size: 1.5em;
         letter-spacing: 5px;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
     }
 }
