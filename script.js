@@ -3,7 +3,7 @@ const daftarProdukLengkap = [
     // NEW DROP & SALE
     { id: 1, nama: "Urban Mischief Tee", harga: 249000, gambar: "https://github.com/Dragonwinnn1/PAWSofficialSTORE/blob/main/WSA.jpg?raw=true", kategori: "new-drop,sale", spesifikasi: "Cotton Combed 30s, Sablon Plastisol, Regular Fit.", deskripsi: "Kaos perdana dari koleksi 'Concrete Jungle'. Desain minimalis namun penuh makna." },
     // SALE
-    { id: 2, nama: "Black & White Anarchy Hoodie", harga: 489000, gambar: "distro-kaos-02.jpg", kategori: "sale", spesifikasi: "Fleece Tebal 280gsm, Sablon Discharge, Oversize Fit.", deskripsi: "Hoodie tebal dengan artwork kontras, cocok untuk cuaca dingin perkotaan. SALE HINGGA AKHIR BULAN!" },
+    { id: 2, nama: "Black & White Anarchy Hoodie", harga: 489000, gambar: "https://github.com/Dragonwinnn1/PAWSofficialSTORE/blob/main/WSA1.jpg?raw=true", kategori: "sale", spesifikasi: "Fleece Tebal 280gsm, Sablon Discharge, Oversize Fit.", deskripsi: "Hoodie tebal dengan artwork kontras, cocok untuk cuaca dingin perkotaan. SALE HINGGA AKHIR BULAN!" },
     // NEW DROP
     { id: 3, nama: "CARGO PANTS BLACK V3", harga: 399000, gambar: "distro-celana-03.jpg", kategori: "new-drop", spesifikasi: "Material Twill Premium, 6 Pocket Design, Slim Tapered.", deskripsi: "Celana kargo versi ketiga, perbaikan dari segi material dan potongan. Wajib punya!" },
     // SALE
@@ -329,4 +329,5 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSection.style.backgroundImage = `url('${bgImages[0]}')`;
     }
 });
+
 
