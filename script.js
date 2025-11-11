@@ -1,8 +1,8 @@
 // Struktur data produk dengan kategori, detail, dan STOK
 const daftarProdukLengkap = [
     // Tambahkan properti 'stok' ke setiap item
-    { id: 1, nama: "Urban Mischief Tee", harga: 249000, gambar: "distro-kaos-01.jpg", kategori: "new-drop,sale,kaos", spesifikasi: "Cotton Combed 30s, Sablon Plastisol, Regular Fit.", deskripsi: "Kaos perdana dari koleksi 'Concrete Jungle'. Desain minimalis namun penuh makna.", stok: 15 },
-    { id: 2, nama: "Black & White Anarchy Hoodie", harga: 489000, gambar: "distro-kaos-02.jpg", kategori: "sale,kaos", spesifikasi: "Fleece Tebal 280gsm, Sablon Discharge, Oversize Fit.", deskripsi: "Hoodie tebal dengan artwork kontras, cocok untuk cuaca dingin perkotaan. SALE HINGGA AKHIR BULAN!", stok: 8 },
+    { id: 1, nama: "Urban Mischief Tee", harga: 249000, gambar: "https://github.com/Dragonwinnn1/PAWSofficialSTORE/blob/main/WSA.jpg?raw=true", kategori: "new-drop,sale,kaos", spesifikasi: "Cotton Combed 30s, Sablon Plastisol, Regular Fit.", deskripsi: "Kaos perdana dari koleksi 'Concrete Jungle'. Desain minimalis namun penuh makna.", stok: 15 },
+    { id: 2, nama: "Black & White Anarchy Hoodie", harga: 489000, gambar: "https://github.com/Dragonwinnn1/PAWSofficialSTORE/blob/main/WSA1.jpg?raw=true", kategori: "sale,kaos", spesifikasi: "Fleece Tebal 280gsm, Sablon Discharge, Oversize Fit.", deskripsi: "Hoodie tebal dengan artwork kontras, cocok untuk cuaca dingin perkotaan. SALE HINGGA AKHIR BULAN!", stok: 8 },
     { id: 3, nama: "CARGO PANTS BLACK V3", harga: 399000, gambar: "distro-celana-03.jpg", kategori: "new-drop,celana", spesifikasi: "Material Twill Premium, 6 Pocket Design, Slim Tapered.", deskripsi: "Celana kargo versi ketiga, perbaikan dari segi material dan potongan. Wajib punya!", stok: 22 },
     { id: 4, nama: "WINDBREAKER V2 Limited", harga: 650000, gambar: "distro-jaket-04.jpg", kategori: "sale,jaket", spesifikasi: "Parachute Waterproof, Mesh Lining, Adjustable Hoodie.", deskripsi: "Jaket anti air dan angin. Stok terbatas, diskon 20% khusus minggu ini!", stok: 5 },
     { id: 5, nama: "SNAPBACK ORIGINAL Logo", harga: 199000, gambar: "distro-topi-05.jpg", kategori: "new-drop,aksesoris", spesifikasi: "Polyester Drill, Bordir 3D, Adjustable Strap.", deskripsi: "Topi klasik dengan logo ikonik PAWS. Sempurnakan penampilan jalanan Anda.", stok: 30 },
@@ -569,3 +569,4 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSection.style.backgroundImage = `url('${bgImages[0]}')`;
     }
 });
+
