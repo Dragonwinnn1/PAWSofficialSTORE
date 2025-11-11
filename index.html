@@ -33,10 +33,31 @@
 
         <section id="koleksi">
             <h2 class="section-title" id="koleksi-title">EXCLUSIVE DROP</h2> 
+            
+            <div id="filter-bar">
+                <div>
+                    <label for="filter-harga">Harga Min:</label>
+                    <select id="filter-harga">
+                        <option value="0">Semua Harga</option>
+                        <option value="200000">Rp 200.000+</option>
+                        <option value="400000">Rp 400.000+</option>
+                        <option value="600000">Rp 600.000+</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filter-kategori">Filter Kategori:</label>
+                    <select id="filter-kategori">
+                        <option value="all">Semua Kategori</option>
+                        <option value="kaos">Kaos</option>
+                        <option value="jaket">Jaket/Hoodie</option>
+                        <option value="celana">Celana</option>
+                        <option value="aksesoris">Aksesoris</option>
+                    </select>
+                </div>
+            </div>
             <div id="daftar-produk" class="produk-grid">
                 </div>
-            <button id="checkout-btn" class="cta-button" style="display: none; margin-top: 40px;">CHECKOUT & ORDER</button>
-        </section>
+            </section>
         
         <section id="banner-promo">
             <div class="promo-text">
@@ -62,7 +83,19 @@
                 </div>
         </div>
     </div>
-
+    
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-cart-modal">&times;</span>
+            <h3 class="section-title" style="margin-bottom: 20px;">KERANJANG BELANJA ANDA</h3>
+            <ul id="cart-list" class="cart-list">
+                </ul>
+            <div class="cart-total-summary">
+                TOTAL: <span id="cart-total-price">Rp 0</span>
+            </div>
+            <button id="checkout-btn-modal" class="cta-button" style="width: 100%; margin-top: 30px;">LANJUTKAN KE CHECKOUT (WA/TG)</button>
+        </div>
+    </div>
     <div id="initial-popup" class="modal">
         <div class="modal-content popup-banner">
             <span class="close-button-popup">&times;</span>
@@ -71,7 +104,12 @@
             <button class="cta-button" id="enter-site-btn">ENTER</button>
         </div>
     </div>
-
+    
+    <div class="floating-socials">
+        <a href="https://wa.me/6281234567890" target="_blank" class="social-bubble wa" title="WhatsApp Order">WA</a>
+        <a href="https://t.me/username_telegram_anda" target="_blank" class="social-bubble tg" title="Telegram Order">TG</a>
+        <a href="https://instagram.com/pawsstreetwear" target="_blank" class="social-bubble ig" title="Instagram @pawsstreetwear">IG</a>
+    </div>
     <script src="script.js"></script> 
 </body>
 </html>
